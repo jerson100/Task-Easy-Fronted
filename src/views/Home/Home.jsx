@@ -1,14 +1,13 @@
 import React from "react";
-import { ContainerHome, HeaderHome, MainHome } from "./home.style";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import { ContainerHome } from "./home.style";
 
 const Home = () => {
   return (
     <ContainerHome>
-      <HeaderHome>
-        <h1>Todo List</h1>
-        <button>Create Task</button>
-      </HeaderHome>
-      <MainHome></MainHome>
+      <Header />
+      <Main />
     </ContainerHome>
   );
 };

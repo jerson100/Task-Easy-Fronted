@@ -7,14 +7,4 @@ const ContainerHome = styled.div`
   border: solid 1px red;
 `;
 
-const HeaderHome = styled.header`
-  height: 200px;
-  border: solid 1px green;
-`;
-
-const MainHome = styled.header`
-  flex: 1 0 0;
-  border: solid 1px blue;
-`;
-
-export { ContainerHome, HeaderHome, MainHome };
+export { ContainerHome };
