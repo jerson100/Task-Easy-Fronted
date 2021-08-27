@@ -1,8 +1,17 @@
 import React from "react";
-import { MainHome } from "./main.style";
+import Container from "../../../../components/common/Container";
+import Tasks from "../Tasks";
+import { MainHome, Title } from "./main.style";
 
 const Main = () => {
-  return <MainHome></MainHome>;
+  return (
+    <MainHome>
+      <Container>
+        <Title>All Tasks</Title>
+        <Tasks />
+      </Container>
+    </MainHome>
+  );
 };
 
 export default Main;
