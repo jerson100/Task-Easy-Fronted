@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MainHome = styled.header`
   flex: 1 0 0;
-  border: solid 1px blue;
+  background-color: rgb(247, 247, 249);
 `;
 
 export { MainHome };

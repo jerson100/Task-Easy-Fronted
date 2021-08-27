@@ -5,12 +5,12 @@ const Title = styled.h1`
 `;
 
 const HeaderHome = styled.header`
-  height: 200px;
-  border: solid 1px green;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgb(232, 238, 246);
 `;
 
 export { Title, HeaderHome };
