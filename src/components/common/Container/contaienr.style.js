@@ -11,8 +11,8 @@ const StyleBaseContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
 `;
 
