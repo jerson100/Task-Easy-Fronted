@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import { breakpoints } from "../../../configs/style";
-
-const breakpointContainer = (breakpoint) => `
-    @media screen and (min-width: ${breakpoint}px) {
-        max-width: ${breakpoint - 10}px;
-    }
-`;
+import { breakpoints, breakpointContainer } from "../../../configs/style";
 
 const StyleBaseContainer = styled.div`
   margin-left: auto;

@@ -3,11 +3,11 @@ import styled, { css } from "styled-components";
 
 const ArticleStyle = styled.article`
   width: 100%;
-  border-top: solid 4px ${({ gColor }) => gColor};
+  border-top: solid 4px ${({ $color }) => $color};
   border-radius: 0 0 2px 2px;
   background-color: #fff;
   padding: 1rem;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 5px 5px #0000000d;
   ${({ marginB }) =>
     marginB &&
     css`
@@ -18,7 +18,7 @@ const ArticleStyle = styled.article`
 const HeaderStyle = styled.header``;
 
 const Title = styled.h1`
-  background-color: ${({ gColor }) => lighten(0.34, gColor)};
+  background-color: ${({ $color }) => lighten(0.34, $color)};
   border-radius: 10px;
   color: black;
   display: inline-block;
@@ -27,6 +27,10 @@ const Title = styled.h1`
   padding: 0.5rem 1.1rem;
   margin-top: 0;
   margin-bottom: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const BodyStyle = styled.p`

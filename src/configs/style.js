@@ -18,4 +18,10 @@ const breakpoints = {
   xl: 1200, // Extra large devices (large desktops, 1200px and up)
 };
 
-export { colors, breakpoints };
+const breakpointContainer = (breakpoint) => `
+    @media screen and (min-width: ${breakpoint}px) {
+        max-width: ${breakpoint - 10}px;
+    }
+`;
+
+export { colors, breakpoints, breakpointContainer };
