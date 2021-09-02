@@ -16,6 +16,7 @@ import {
   variantsTask,
   variantsTitle,
 } from "./taks.variants";
+import TaskDeleteAction from "./components/TaskDeleteAction";
 
 const Task = ({
   id,
@@ -26,6 +27,7 @@ const Task = ({
   marginBotom,
   handleDelete,
   handleUpdate,
+  isPreview,
 }) => {
   return (
     <ArticleStyle
@@ -50,9 +52,16 @@ const Task = ({
             className="fas fa-trash-alt"
             size="small"
             color={color}
-            handleClick={() => handleDelete(id)}
+            handleClick={() => !isPreview && handleDelete(id)}
           />
-          <Icon className="far fa-edit" size="small" color={color} />
+          <TaskDeleteAction
+            title={title}
+            description={description}
+            color={color}
+            handleUpdate={handleUpdate}
+            id={id}
+            isPreview={isPreview}
+          />
         </IconGroup>
       </FooterStyle>
     </ArticleStyle>
@@ -67,12 +76,14 @@ Task.propTypes = {
   handleDelete: PropTypes.func,
   handleUpdate: PropTypes.func,
   isComplete: PropTypes.bool,
+  isPreview: PropTypes.bool,
 };
 
 Task.defaultProps = {
   color: "rgba(0,0,0,.2)",
   isComplete: false,
   marginBotom: false,
+  isPreview: false,
 };
 
 export default React.memo(Task);

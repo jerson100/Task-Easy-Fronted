@@ -5,7 +5,7 @@ import { PreviewTaskStyle } from "./previewTask.style";
 const PreviewTask = ({ color, title, description }) => {
   return (
     <PreviewTaskStyle>
-      <Task color={color} description={description} title={title} />
+      <Task color={color} description={description} title={title} isPreview />
     </PreviewTaskStyle>
   );
 };

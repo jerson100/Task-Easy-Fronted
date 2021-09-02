@@ -6,7 +6,7 @@ import Space from "../../../../components/common/Space/Space";
 // import AddTaskModal from "../../../../components/common/AddTaskModal/AddTaskModal";
 // import { TaskListItemStyle } from "../../../../components/common/TaskList/taskList.style";
 
-const Main = ({ tasks, remove }) => {
+const Main = ({ tasks, remove, update }) => {
   //   console.log(tasks);
   return (
     <MainHome>
@@ -14,7 +14,7 @@ const Main = ({ tasks, remove }) => {
         <Container>
           <Title>All Tasks</Title>
           <Space size="lg" />
-          <Tasks tasks={tasks} remove={remove} />
+          <Tasks tasks={tasks} remove={remove} update={update} />
         </Container>
       </section>
       {/* <AddTaskModal /> */}

@@ -2,13 +2,36 @@ const addTask = async ({ title, description, color }) => {
   const data = await fetch("http://localhost:1025/api/v1/tasks", {
     body: JSON.stringify({
       title,
-      description,
-      color,
+      description: description,
+      color: color,
     }),
     headers: {
       "Content-Type": "application/json",
     },
     method: "POST",
+  });
+  if (data.ok) {
+    return await data.json();
+  } else {
+    throw {
+      status: data.status,
+      message:
+        data.status === 400 ? (await data.json()).message : data.statusText,
+    };
+  }
+};
+
+const updateTask = async ({ title, description, color, id }) => {
+  const data = await fetch(`http://localhost:1025/api/v1/tasks/${id}`, {
+    body: JSON.stringify({
+      title,
+      description: description,
+      color: color,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "PATCH",
   });
   if (data.ok) {
     return await data.json();
@@ -47,4 +70,4 @@ const deleteTask = async (id) => {
   }
 };
 
-export { addTask, getTasks, deleteTask };
+export { addTask, getTasks, deleteTask, updateTask };

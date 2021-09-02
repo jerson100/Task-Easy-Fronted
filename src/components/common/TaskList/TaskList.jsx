@@ -5,7 +5,7 @@ import Row from "../Row/Row";
 import Task from "../Task";
 import { TaskListStyle } from "./taskList.style";
 
-const TaskList = ({ tasks, remove }) => {
+const TaskList = ({ tasks, remove, update }) => {
   return (
     <TaskListStyle>
       <Row>
@@ -19,6 +19,7 @@ const TaskList = ({ tasks, remove }) => {
               isComplete={isComplete}
               title={title}
               handleDelete={remove}
+              handleUpdate={update}
             />
           ))}
         </AnimatePresence>
@@ -28,7 +29,15 @@ const TaskList = ({ tasks, remove }) => {
 };
 
 const ColTask = React.memo(
-  ({ id, color, description, isComplete, title, handleDelete }) => {
+  ({
+    id,
+    color,
+    description,
+    isComplete,
+    title,
+    handleDelete,
+    handleUpdate,
+  }) => {
     return (
       <Col xs={24} sm={12} md={8} lg={6} xl={4}>
         <Task
@@ -40,6 +49,7 @@ const ColTask = React.memo(
           marginBotom
           id={id}
           handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
         />
       </Col>
     );
