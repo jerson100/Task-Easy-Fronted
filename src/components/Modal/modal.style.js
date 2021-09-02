@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { breakpointContainer, breakpoints } from "../../configs/style";
 
@@ -5,7 +6,7 @@ const padding = css`
   padding: 1rem;
 `;
 
-const ModalContainerStyle = styled.div`
+const ModalContainerStyle = styled(motion.div)`
   background-color: #000000ba;
   position: fixed;
   top: 0;
@@ -28,7 +29,7 @@ const ModalDialogStyle = styled.div`
   ${({ $size }) => $size && breakpointContainer(breakpoints[$size])}
 `;
 
-const ModalContentStyle = styled.div`
+const ModalContentStyle = styled(motion.div)`
   width: 100%;
   background-color: #fff;
 `;

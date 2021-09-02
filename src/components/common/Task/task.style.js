@@ -1,7 +1,8 @@
 import { lighten } from "polished";
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
-const ArticleStyle = styled.article`
+const ArticleStyle = styled(motion.article)`
   width: 100%;
   border-top: solid 4px ${({ $color }) => $color};
   border-radius: 0 0 2px 2px;
@@ -17,7 +18,7 @@ const ArticleStyle = styled.article`
 
 const HeaderStyle = styled.header``;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   background-color: ${({ $color }) => lighten(0.34, $color)};
   border-radius: 10px;
   color: black;
@@ -33,13 +34,13 @@ const Title = styled.h1`
   overflow: hidden;
 `;
 
-const BodyStyle = styled.p`
+const BodyStyle = styled(motion.p)`
   height: 80px;
   font-size: 0.8rem;
   margin-bottom: 0;
   margin-top: 0;
 `;
 
-const FooterStyle = styled.footer``;
+const FooterStyle = styled(motion.footer)``;
 
 export { ArticleStyle, BodyStyle, FooterStyle, HeaderStyle, Title };

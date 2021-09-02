@@ -3,9 +3,11 @@ import Container from "../../../../components/common/Container";
 import Tasks from "../Tasks";
 import { MainHome, Title } from "./main.style";
 import Space from "../../../../components/common/Space/Space";
-import AddTaskModal from "../../../../components/common/AddTaskModal/AddTaskModal";
+// import AddTaskModal from "../../../../components/common/AddTaskModal/AddTaskModal";
+// import { TaskListItemStyle } from "../../../../components/common/TaskList/taskList.style";
 
 const Main = ({ tasks, remove }) => {
+  //   console.log(tasks);
   return (
     <MainHome>
       <section>
@@ -15,9 +17,9 @@ const Main = ({ tasks, remove }) => {
           <Tasks tasks={tasks} remove={remove} />
         </Container>
       </section>
-      <AddTaskModal />
+      {/* <AddTaskModal /> */}
     </MainHome>
   );
 };
 
-export default Main;
+export default React.memo(Main);

@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from "react";
-import { createPortal } from "react-dom";
 import Modal from "../../Modal";
 import Button from "../Button";
 import Col from "../Row/components/Col";
@@ -17,13 +16,15 @@ import PreviewTask from "./components/PreviewTask";
 import Space from "../Space/Space";
 
 const AddTaskModal = ({ handleOk, handleCancel, show, setshowModal }) => {
-  if (!show) return null;
-  return createPortal(
-    <Modal size="sm">
+  return (
+    <Modal size="sm" show={show} setshowModal={setshowModal}>
       <Modal.Header>Agregar Tarea</Modal.Header>
-      <ModalContent handleOk={handleOk} setshowModal={setshowModal} />
-    </Modal>,
-    document.querySelector("body")
+      <ModalContent
+        handleOk={handleOk}
+        setshowModal={setshowModal}
+        show={show}
+      />
+    </Modal>
   );
 };
 

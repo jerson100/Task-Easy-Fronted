@@ -10,6 +10,12 @@ import {
   FooterStyle,
   Title,
 } from "./task.style";
+import {
+  variantsDescription,
+  variantsFooter,
+  variantsTask,
+  variantsTitle,
+} from "./taks.variants";
 
 const Task = ({
   id,
@@ -22,14 +28,23 @@ const Task = ({
   handleUpdate,
 }) => {
   return (
-    <ArticleStyle $color={color} marginB={marginBotom}>
+    <ArticleStyle
+      $color={color}
+      marginB={marginBotom}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={variantsTask}
+    >
       <HeaderStyle>
-        <Title $color={color}>{title}</Title>
+        <Title variants={variantsTitle} $color={color}>
+          {title}
+        </Title>
       </HeaderStyle>
       <Space size="md" />
-      <BodyStyle>{description}</BodyStyle>
+      <BodyStyle variants={variantsDescription}>{description}</BodyStyle>
       <Space size="md" />
-      <FooterStyle>
+      <FooterStyle variants={variantsFooter}>
         <IconGroup alignItems="flex-end" justifyContent="flex-end">
           <Icon
             className="fas fa-trash-alt"

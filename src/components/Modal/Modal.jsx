@@ -1,4 +1,6 @@
+import { AnimatePresence } from "framer-motion";
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import {
   ModalBodyStyle,
   ModalContainerStyle,
@@ -7,20 +9,35 @@ import {
   ModalFooterStyle,
   ModalHeaderStyle,
 } from "./modal.style";
+import { modalContainerVariants, modalContentVariants } from "./modal.variants";
 
-const Modal = ({ children, size }) => {
+const Modal = ({ children, size, show, setShowModal }) => {
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (show) {
+      document.body.style.overflow = "hidden";
+    }
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
-  return (
-    <ModalContainerStyle>
-      <ModalDialogStyle $size={size}>
-        <ModalContentStyle>{children}</ModalContentStyle>
-      </ModalDialogStyle>
-    </ModalContainerStyle>
+  }, [show]);
+  return createPortal(
+    <AnimatePresence>
+      {show && (
+        <ModalContainerStyle
+          initial="hidden"
+          animate="visible"
+          variants={modalContainerVariants}
+          exit="exit"
+        >
+          <ModalDialogStyle $size={size}>
+            <ModalContentStyle variants={modalContentVariants}>
+              {children}
+            </ModalContentStyle>
+          </ModalDialogStyle>
+        </ModalContainerStyle>
+      )}
+    </AnimatePresence>,
+    document.body
   );
 };
 
