@@ -1,5 +1,7 @@
+const API_VERSION = "v1";
+const URL = `https://task-easy.herokuapp.com/api/${API_VERSION}/`;
 const addTask = async ({ title, description, color }) => {
-  const data = await fetch("http://localhost:1025/api/v1/tasks", {
+  const data = await fetch(`${URL}tasks`, {
     body: JSON.stringify({
       title,
       description: description,
@@ -22,7 +24,7 @@ const addTask = async ({ title, description, color }) => {
 };
 
 const updateTask = async ({ title, description, color, id }) => {
-  const data = await fetch(`http://localhost:1025/api/v1/tasks/${id}`, {
+  const data = await fetch(`${URL}tasks/${id}`, {
     body: JSON.stringify({
       title,
       description: description,
@@ -45,7 +47,7 @@ const updateTask = async ({ title, description, color, id }) => {
 };
 
 const getTasks = async () => {
-  const data = await fetch("http://localhost:1025/api/v1/tasks");
+  const data = await fetch(`${URL}tasks`);
   if (data.ok) {
     return await data.json();
   } else {
@@ -57,7 +59,7 @@ const getTasks = async () => {
 };
 
 const deleteTask = async (id) => {
-  const data = await fetch(`http://localhost:1025/api/v1/tasks/${id}`, {
+  const data = await fetch(`${URL}tasks/${id}`, {
     method: "DELETE",
   });
   if (data.ok) {

@@ -11,6 +11,7 @@ const Footer = () => {
           <a
             href="https://www.facebook.com/jersonomar.ramirezortiz/"
             target="_blank"
+            rel="noreferrer"
           >
             Jerson Ramírez Ortiz.
           </a>
