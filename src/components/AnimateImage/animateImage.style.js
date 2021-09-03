@@ -5,6 +5,7 @@ const AnimateImageStyle = styled(motion.div)`
   position: fixed;
   right: 0;
   bottom: 0;
+  line-height: 0;
 `;
 
 const img = css`

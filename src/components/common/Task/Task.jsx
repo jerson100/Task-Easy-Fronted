@@ -37,6 +37,7 @@ const Task = ({
       animate="visible"
       exit="exit"
       variants={variantsTask}
+      layout
     >
       <HeaderStyle>
         <Title variants={variantsTitle} $color={color}>
