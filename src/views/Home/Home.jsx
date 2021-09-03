@@ -3,8 +3,11 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import { getTasks, addTask, deleteTask, updateTask } from "../../api/task";
 import { ContainerHome } from "./home.style";
-import Loader from "../../components/common/Loader/Loader";
+import Loader from "../../components/common/Loader";
 import Footer from "./components/Footer/Footer";
+import yoleft from "../../assets/img/png/yop_left.png";
+import yoright from "../../assets/img/png/yop_right.png";
+import AnimateImage from "../../components/AnimateImage/AnimateImage";
 
 const Home = () => {
   const [tasks, settasks] = useState([]);
@@ -100,6 +103,8 @@ const Home = () => {
       <Main tasks={tasks} remove={remove} update={update} />
       {loading && <Loader />}
       <Footer />
+
+      <AnimateImage urlLeft={yoleft} urlRight={yoright} />
     </ContainerHome>
   );
 };
