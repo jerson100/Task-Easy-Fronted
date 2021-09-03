@@ -15,11 +15,12 @@ const addTask = async ({ title, description, color }) => {
   if (data.ok) {
     return await data.json();
   } else {
-    throw {
+    const err = {
       status: data.status,
       message:
         data.status === 400 ? (await data.json()).message : data.statusText,
     };
+    throw err;
   }
 };
 
@@ -38,11 +39,12 @@ const updateTask = async ({ title, description, color, id }) => {
   if (data.ok) {
     return await data.json();
   } else {
-    throw {
+    const err = {
       status: data.status,
       message:
         data.status === 400 ? (await data.json()).message : data.statusText,
     };
+    throw err;
   }
 };
 
@@ -51,10 +53,11 @@ const getTasks = async () => {
   if (data.ok) {
     return await data.json();
   } else {
-    throw {
+    const err = {
       status: data.status,
       message: data.statusText,
     };
+    throw err;
   }
 };
 
@@ -65,10 +68,11 @@ const deleteTask = async (id) => {
   if (data.ok) {
     return;
   } else {
-    throw {
+    const err = {
       status: data.status,
       message: data.statusText,
     };
+    throw err;
   }
 };
 
