@@ -1,5 +1,4 @@
-const API_VERSION = "v1";
-const URL = `https://task-easy.herokuapp.com/api/${API_VERSION}/`;
+const URL = process.env.REACT_APP_API_BACKEND;
 const addTask = async ({ title, description, color }) => {
   const data = await fetch(`${URL}tasks`, {
     body: JSON.stringify({
