@@ -1,4 +1,5 @@
-const URL = process.env.REACT_APP_API_BACKEND;
+const URL = process.env.REACT_APP_API;
+
 const addTask = async ({ title, description, color }) => {
   const data = await fetch(`${URL}tasks`, {
     body: JSON.stringify({
